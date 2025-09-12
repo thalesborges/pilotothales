@@ -1,123 +1,86 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Voos de Balão — Thales Borges</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0b0d12; --card:#0f1720; --muted:#9aa3b2; --text:#e8ecf3;
-  --brand1:#7c5cff; --brand2:#23d5ab;
-}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Noto Sans,sans-serif;background:linear-gradient(180deg,#06070a,#0b0d12);color:var(--text);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.container{max-width:1120px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:60;background:rgba(8,10,14,.55);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.03)}
-nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-weight:800;letter-spacing:.6px;font-size:18px}
-.logo span{background:linear-gradient(90deg,var(--brand1),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.nav-links{display:flex;gap:14px;align-items:center}
-.nav-links a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600}
-.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.03)}
-.menu-btn{display:none;border:1px solid rgba(255,255,255,.06);background:transparent;color:var(--text);padding:8px 12px;border-radius:10px;align-items:center}
-.menu-icon{width:22px;height:18px;position:relative;display:inline-block;margin-right:6px}
-.menu-icon span{position:absolute;height:2px;background:#fff;left:0;right:0;border-radius:2px;transition:all .25s ease}
-.menu-icon span:nth-child(1){top:0}
-.menu-icon span:nth-child(2){top:8px}
-.menu-icon span:nth-child(3){top:16px}
-.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(2){opacity:0}
-.menu-btn[aria-expanded="true"] .menu-icon span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);color:#fff;font-weight:600}
-.btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));box-shadow:0 10px 30px rgba(124,92,255,.12);border-color:transparent}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.04);border-radius:14px;padding:16px}
-.section{padding:56px 0}
-.grid{display:grid;gap:18px}
-.grid.cols-3{grid-template-columns:repeat(3,1fr)}
-.grid.cols-2{grid-template-columns:repeat(2,1fr)}
-.muted{color:var(--muted)}
-.small{font-size:13px;color:var(--muted)}
-.footer-links{display:flex;gap:12px;align-items:center}
-/* responsive */
-@media (max-width:980px){
-  .nav-links{display:none}
-  .menu-btn{display:inline-flex}
-  .grid.cols-3{grid-template-columns:1fr}
-  .grid.cols-2{grid-template-columns:1fr}
-  .hero{grid-template-columns:1fr;gap:18px;padding:36px 0}
-  .scene{height:220px}
-  .title{font-size:26px}
-  .subtitle, .muted{font-size:15px}
-  .btn{padding:12px 16px;font-size:15px}
-  .contact-wrap{grid-template-columns:1fr}
-  .footer-links{justify-content:center;width:100%}
-  .card{padding:12px}
-}
-
-/* overlay for hero text on small screens */
-@media (max-width:980px){
-  .hero{position:relative}
-  .hero .hero-text{position:absolute;left:18px;right:18px;bottom:18px;background:linear-gradient(180deg,rgba(6,8,12,.35),rgba(6,8,12,.6));padding:14px;border-radius:12px;color:#fff}
-  .hero .hero-text .title{font-size:20px;margin:0}
-  .hero .hero-text .subtitle{font-size:14px}
-  .social-btn{display:block;width:100%;text-align:center}
-}
-</style>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Voos de Balão — Thales Borges</title>
+<link href="https://fonts.googleapis.com/css2?family=Calisto+MT:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="container">
     <nav>
-      <a class="logo" href="index.html">THALES <span>BORGES</span></a>
-      <div class="nav-links" id="navlinks">
-        <a href="index.html">Home</a>
-        <a href="palestras.html">Palestras</a>
-        <a href="voos.html">Voos</a>
-        <a href="contato.html">Contato</a>
-        <a href="feedback.html">Feedback</a>
+      <div class="header-main">
+        <h1 style="font-family: 'Calisto MT', serif; font-size: 5rem; text-align: center;">Thales Borges</h1>
       </div>
-      <button class="menu-btn" id="menubtn" aria-label="Abrir menu" aria-expanded="false"><span class="menu-icon"><span></span><span></span><span></span></span>Menu</button>
     </nav>
   </div>
 </header>
-<main class="section container">
-  <h1>Voos de Balão</h1>
-  <p class="muted">Experiências ao amanhecer para empresas e grupos, com briefing de segurança, fotos e encerramento com brinde.</p>
-  <div class="grid cols-2" style="margin-top:18px">
-    <div class="card">
-      <h3>Voo Panorâmico</h3>
-      <p class="muted">Até 12 passageiros, inclui briefing e fotos profissionais.</p>
-      <ul class="muted"><li>Duração aproximada: 45 a 60 minutos</li></ul>
-      <p style="margin-top:10px"><a class="btn primary" href="contato.html">Reservar</a></p>
+<main>
+  <section class="content-container">
+    <h2>O que está incluso em todos os nossos pacotes?</h2>
+    <div class="list-container">
+      <ul>
+        <li>✅ **Translado local** 🚐</li>
+        <li>✅ **Desjejum simples no check-in** ☕🍪</li>
+        <li>✅ **Passeio de 40min a 1 hora** 🔥🎈</li>
+        <li>✅ **Tradicional brinde com champanhe após o pouso** 🍾🥂</li>
+        <li>✅ **Café da manhã completo após o voo** 🥪☕</li>
+        <li>✅ **Seguro Aventura** 🧭🔒</li>
+        <li>✅ **Estacionamento gratuito no local** 🚗</li>
+        <li>✅ **Melhor localização de Boituva** 📍</li>
+        <li>✅ **Localizados no centro nacional de Paraquedismo** 🪂</li>
+        <li>✅ **Cortesia de fotos e vídeo do passeio** 📸</li>
+        <li>✅ **Brinde especial para aniversariantes da semana** 🎁🎉</li>
+      </ul>
     </div>
-    <div class="card">
-      <h3>Ações de Marca</h3>
-      <p class="muted">Ativações e experiências customizadas com suporte logístico e segurança.</p>
-      <p style="margin-top:10px"><a class="btn primary" href="contato.html">Solicitar orçamento</a></p>
-    </div>
-  </div>
-  <section style="margin-top:24px">
-    <h2>Segurança e logística</h2>
-    <p class="muted">Checklist de vento e previsão, equipamentos revisados e equipe qualificada. A segurança vem em primeiro lugar.</p>
   </section>
-  <section style="margin-top:24px">
+  <section class="content-container">
+    <h2>Ações de Marca e Divulgação</h2>
+    <p>
+      Transforme a sua marca em uma experiência memorável. Oferecemos voos de balão personalizados para ações de marketing, lançamento de produtos e eventos corporativos. A visibilidade e o impacto de ter sua marca flutuando nos céus são incomparáveis. Nossa equipe é especialista em criar momentos únicos que se conectam com o público de uma forma inovadora e emocionante, garantindo que sua mensagem seja vista e sentida.
+    </p>
+  </section>
+  <section class="content-container">
+    <h2>Segurança e Credibilidade</h2>
+    <p>
+      Com mais de 200 voos realizados e experiência em mais de 5 estados, minha trajetória é pautada pela segurança e excelência. Sou especialista em ações especiais e lançador de paraquedas, e minha habilitação ANAC (Agência Nacional de Aviação Civil) é a garantia do meu profissionalismo.
+      <br><br>
+      **Código ANAC:** 435057
+    </p>
+  </section>
+  <section class="content-container">
     <h2>Galeria de fotos e vídeos</h2>
-    <p class="muted">Veja momentos de voos e cobertura de eventos. Use o formulário de contato para enviar suas fotos.</p>
-    <div class="grid cols-3" style="margin-top:12px">
-      <div class="card"><img src="images/hero-fotinha.jpg" alt="Balão - foto" loading="lazy" style="width:100%;border-radius:8px"/></div>
-      <div class="card"><img src="images/bibi-portrait.jpg" alt="Bibi" loading="lazy" style="width:100%;border-radius:8px"/></div>
-      <div class="card"><iframe width="100%" height="210" loading="lazy" src="https://www.youtube.com/embed/xKwuL7xmGYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px"></iframe></div>
+    <div class="instagram-post">
+      <h3>Fotos</h3>
+      <div class="instagram-media">
+        </div>
+      <div class="instagram-meta">
+        <span class="likes">2.105 curtidas</span>
+      </div>
+    </div>
+    <div class="instagram-post">
+      <h3>Vídeos</h3>
+      <div class="instagram-media">
+        </div>
+      <div class="instagram-meta">
+        <span class="likes">1.879 visualizações</span>
+      </div>
     </div>
   </section>
 </main>
 <footer style="border-top:1px solid rgba(255,255,255,.03);padding:24px 0;margin-top:32px;background:transparent">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-    <div class="small">© <span id="year"></span> Thales Borges</div>
+  <div class="container" style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px; text-align: center;">
+    <div class="small">© 2025 Thales Borges</div>
     <div class="footer-links">
-      <a class="small" href="https://wa.me/5515988069095" target="_blank">WhatsApp</a>
-      <a class="small" href="https://www.instagram.com/pilotothales?utm_source=ig_web_button_share_sheet&igsh=M244eXJyMDMzczl6" target="_blank">Instagram</a>
+      <a href="https://wa.me/5515988069095" target="_blank" class="large-link">WhatsApp</a>
+      <a href="https://www.instagram.com/pilotothales" target="_blank" class="large-link">Instagram</a>
     </div>
   </div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('menubtn').addEventListener('click', function(){var btn=this; var links=document.getElementById('navlinks'); var open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', (!open).toString()); if(!open){ links.style.display='flex'; links.style.flexDirection='column'; links.style.gap='10px'; links.style.padding='8px 0 14px'; } else { links.style.display='none'; } });</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
