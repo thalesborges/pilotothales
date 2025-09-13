@@ -9,6 +9,16 @@
 </head>
 <body>
 <header>
+<!-- ===== Menu mínimo (cole dentro do <header> ou logo após <body>) ===== -->
+<nav class="nav-menu" aria-label="Menu principal do site">
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="palestras.html">Palestras</a></li>
+    <li><a href="voos.html">Voos</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
   <div class="container">
     <nav>
       <div class="header-main">
@@ -68,5 +78,22 @@
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+<script>
+(function(){
+  const totalLogos = 6; // <- mude este número para quantas imagens você tem
+  const basePath = 'logos'; // pasta onde estão 1.jpg,2.jpg,...
+  const ext = '.jpg'; // troque para '.png' se usar PNG
+  const container = document.querySelector('.logo-gallery');
+  if(!container) return;
+  for(let i=1;i<=totalLogos;i++){
+    const img = document.createElement('img');
+    img.src = `${basePath}/${i}${ext}`;
+    img.alt = `Logo ${i}`;
+    img.className = 'logo-item';
+    container.appendChild(img);
+  }
+})();
+</script>
+
 </body>
 </html>

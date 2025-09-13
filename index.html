@@ -9,6 +9,16 @@
 </head>
 <body>
 <header>
+<!-- ===== Menu mínimo (cole dentro do <header> ou logo após <body>) ===== -->
+<nav class="nav-menu" aria-label="Menu principal do site">
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="palestras.html">Palestras</a></li>
+    <li><a href="voos.html">Voos</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
   <div class="container">
     <nav>
       <div class="header-main">
@@ -27,7 +37,9 @@
         <a href="voos.html" class="button">Agendar Voo</a>
       </div>
       <p class="section-text">
-        <br>Em 2008, um acidente aéreo mudou completamente a vida de Thales. Com 70% do corpo queimado e mais de 130 cirurgias, sua vida virou de ponta cabeça. Mas o que poderia ser o fim, foi o começo de uma história de superação e resiliência. Sua paixão pela aviação, que quase o custou a vida, se transformou em uma nova forma de voar. Hoje, Thales é um renomado piloto de balões, sobrevoando os céus e compartilhando sua incrível jornada como palestrante.
+        <br>Queimei 70% do meu corpo e passei por mais de 130 cirurgias. O que poderia ter sido o fim da minha história virou o começo de um propósito: transformar a dor em direção e o medo em ação. Reconstruí meu corpo e minha mente dia após dia, aprendendo que a verdadeira força não é evitar a queda, mas levantar-se sempre — mais sábio, mais íntegro e mais decidido.
+
+Hoje sou piloto de balão e palestrante. Nos céus eu encontro liberdade; no palco, encontro sentido. Levo para empresas, escolas e eventos uma mensagem de superação que mistura experiência prática, técnica de resiliência e histórias reais do meu caminho. Minhas palestras não são só relatos  são ferramentas concretas para quem busca reencontrar coragem, foco e propósito após perdas ou desafios.
       </p>
       <img src="fotos-home/foto-balao.jpg" alt="Thales voando em um balão" class="main-image-placeholder"/>
     </div>
@@ -90,6 +102,27 @@
 </footer>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script>
+/* ===== Script leve: evita duplicar menu se já existir ===== */
+(function(){
+  // se já existir .nav-menu no DOM (por você ter colado manualmente), nada acontece
+  if(document.querySelector('.nav-menu')) return;
+  // caso queira que o script crie o menu automaticamente, descomente o bloco abaixo:
+  /*
+  const nav = document.createElement('nav');
+  nav.className = 'nav-menu';
+  nav.setAttribute('aria-label','Menu principal do site');
+  nav.innerHTML = '<ul>'
+    + '<li><a href="index.html">Início</a></li>'
+    + '<li><a href="palestras.html">Palestras</a></li>'
+    + '<li><a href="voos.html">Voos</a></li>'
+    + '<li><a href="feedback.html">Feedback</a></li>'
+    + '<li><a href="contato.html">Contato</a></li>'
+    + '</ul>';
+  document.body.appendChild(nav);
+  */
+})();
 </script>
 </body>
 </html>

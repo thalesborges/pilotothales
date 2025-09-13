@@ -288,3 +288,80 @@ section {
     max-width: 100%;
   }
 }
+/* ===== Adições mínimas (colar no final de style.css) ===== */
+
+/* centraliza textos e caixas sem substituir nada */
+body, html {
+  box-sizing: border-box;
+}
+.container, main, section, .content-container, .service-card, .why-card, .feedback-box, .contact-item {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* garante que as caixas fiquem centradas e com largura confortável */
+.service-card, .why-card, .feedback-box, .contact-item {
+  max-width: 760px;
+  width: calc(100% - 40px);
+  margin: 14px auto;
+}
+
+/* textos centralizados onde for necessário */
+.container * { text-align: inherit; }
+
+/* MENU FLUTUANTE (pequeno, não quebra seu layout) */
+.nav-menu {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 22px rgba(2,6,12,0.6);
+}
+.nav-menu ul { list-style: none; margin: 0; padding: 0; display:flex; gap:8px; align-items:center; }
+.nav-menu a {
+  display:inline-block;
+  padding:7px 10px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: transparent;
+  transition: transform .12s ease, background .12s ease;
+}
+.nav-menu a:hover { transform: translateY(-3px); background: rgba(255,255,255,0.04); }
+
+/* VARIANTES DE BOTÕES (apenas adicionar classes .green .red .outline onde quiser) */
+.button.green {
+  background: linear-gradient(90deg,#23d5ab,#06b48f);
+  color: #042018;
+  box-shadow: 0 10px 20px rgba(35,213,171,0.12);
+}
+.button.red {
+  background: linear-gradient(90deg,#ff6b6b,#ff3b3b);
+  color: #3b0505;
+  box-shadow: 0 10px 20px rgba(255,107,107,0.12);
+}
+.button.outline {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.08);
+  color: inherit;
+  padding:10px 14px;
+}
+
+/* responsividade simples para o menu (mobile) */
+@media (max-width:720px) {
+  .nav-menu { right:10px; top:10px; padding:6px; }
+  .nav-menu ul { gap:6px; }
+  .nav-menu a { padding:6px 8px; font-size:0.95rem; }
+  .service-card, .why-card, .feedback-box { width: calc(100% - 28px); }
+}
+/* estilos mínimos para as logos (colar no final de style.css) */
+.logo-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:18px; align-items:center; justify-items:center; padding:6px; }
+.logo-item { max-width:140px; max-height:90px; width:100%; height:90px; object-fit:contain; background:transparent; padding:8px; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
