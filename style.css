@@ -365,3 +365,240 @@ body, html {
 /* estilos mínimos para as logos (colar no final de style.css) */
 .logo-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:18px; align-items:center; justify-items:center; padding:6px; }
 .logo-item { max-width:140px; max-height:90px; width:100%; height:90px; object-fit:contain; background:transparent; padding:8px; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+.section-text {
+  margin-bottom: 30px; /* espaço entre texto e vídeo/foto */
+}
+
+.main-image-placeholder {
+  display: block;
+  margin: 40px auto; /* mais espaço entre a foto e os outros elementos */
+  max-width: 100%;
+  height: auto;
+}
+.video-wrapper{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin: 30px 0; /* ajusta espaço entre texto e vídeo */
+}
+.video-wrapper iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.author-figure {
+  margin: 40px 0; /* espaço entre foto e os outros elementos */
+  text-align: center;
+}
+.author-figure img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px; /* opcional */
+}
+.author-figure figcaption{
+  margin-top: 8px;
+  font-size: .95rem;
+  color: #666;
+}
+/* vídeo responsivo */
+.video-wrapper{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  margin: 30px 0; /* espaço acima/abaixo do vídeo */
+}
+.video-wrapper iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* fallback para quando JS estiver desligado (estética) */
+.video-fallback { text-align:center; margin:30px 0; }
+.video-fallback img { max-width:100%; height:auto; display:block; margin:0 auto; cursor:pointer; border-radius:6px; }
+.video-fallback figcaption { margin-top:8px; color:#666; font-size:.95rem; }
+
+/* figura do autor (a imagem da logo) */
+.author-figure {
+  margin: 40px 0;
+  text-align: center;
+}
+.author-figure img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.author-figure figcaption{
+  margin-top: 8px;
+  font-size: .95rem;
+  color: #666;
+}
+/* cria espaçamento entre cada card */
+.services-section .service-card + .service-card {
+  margin-top: 30px;
+}
+
+/* garante espaço após o texto do card */
+.services-section .service-card p {
+  margin-bottom: 60px;
+}
+/* ---- galeria em grid ---- */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+  margin-bottom: 28px;
+}
+
+/* miniaturas */
+.photo-gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.photo-gallery img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* lightbox (modal) */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none; /* mostrado via JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+.lightbox.active { display: flex; }
+
+.lightbox .lb-img {
+  max-width: 95%;
+  max-height: 85%;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.lightbox .lb-close,
+.lightbox .lb-prev,
+.lightbox .lb-next {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 2.1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  opacity: .9;
+}
+
+/* posição dos botões */
+.lightbox .lb-close { top: 18px; right: 24px; font-size: 2.8rem; }
+.lightbox .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); font-size: 2.6rem; }
+.lightbox .lb-next { right: 18px; top: 50%; transform: translateY(-50%); font-size: 2.6rem; }
+
+/* caption opcional (pequeno texto abaixo) */
+.lb-caption {
+  margin-top: 12px;
+  color: #eee;
+  font-size: .95rem;
+  text-align: center;
+}
+/* 1) Regra geral para todas as imagens da página (segurança) */
+img {
+  max-width: 100%; /* nunca ultrapassa o container */
+  height: auto;    /* mantém proporção */
+  display: block;
+}
+
+/* 2) Galeria de fotos (cards / imagens grandes) */
+.photo-gallery,
+.gallery-block .photo-gallery { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+/* imagens dentro da galeria de palestras */
+.photo-gallery img,
+figure img {
+  width: 100%;         /* ocupa o espaço da coluna */
+  max-height: 320px;   /* controla altura máxima para não ficar gigante */
+  object-fit: cover;   /* corta bordas mantendo centralidade */
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* legenda */
+figure figcaption {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+/* 3) Galeria de logos (deixar logos pequenas e uniformes) */
+.logo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 14px;
+  align-items: center;
+  justify-items: center;
+  padding: 8px 0;
+}
+
+.logo-gallery .logo-item {
+  width: 100%;
+  max-width: 40px;  /* controla o tamanho máximo do logo */
+  height: 60px;      /* altura uniforme */
+  object-fit: contain; /* preserva proporção do logo */
+  display: block;
+  filter: none;       /* por padrão colorido; use grayscale(1) se preferir */
+  transition: transform .14s ease;
+}
+.logo-gallery a:hover .logo-item,
+.logo-gallery .logo-item:hover {
+  transform: translateY(-4px);
+}
+
+/* 4) Mobile tweak (opcional) */
+@media (max-width: 520px) {
+  .photo-gallery img,
+  figure img { max-height: 220px; }
+  .logo-gallery .logo-item { height: 48px; max-width: 110px; }
+}
+/* estilos aplicados apenas à página palestras */
+.page-palestras .video-wrapper {
+  max-width: 560px;        /* largura máxima do player nesta página */
+  margin: 24px auto;       /* centraliza e cria espaço */
+  position: relative;
+  padding-bottom: 25%;  /* 16:9 */
+  height: 0;
+}
+.page-palestras .video-wrapper.small {
+  max-width: 420px;        /* versão ainda menor, se usar a classe .small */
+}
+.page-palestras .video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
