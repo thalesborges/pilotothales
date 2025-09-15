@@ -22,7 +22,7 @@
   <div class="container">
     <nav>
       <div class="header-main">
-        <h1 style="font-family: 'Calisto MT', serif; font-size: 5rem; text-align: center;">Thales Borges</h1>
+        <h1 style="font-family: 'Calisto MT', serif; font-size: 6rem; text-align: center;">Thales Borges</h1>
       </div>
     </nav>
   </div>
@@ -46,15 +46,26 @@
     </div>
   </section>
 </main>
-<footer style="border-top:1px solid rgba(255,255,255,.03);padding:24px 0;margin-top:32px;background:transparent">
-  <div class="container" style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px; text-align: center;">
+<footer>
+  <div class="container footer-inner">
     <div class="small">© 2025 Thales Borges</div>
+
     <div class="footer-links">
-      <a href="https://wa.me/5515988069095" target="_blank" class="large-link">WhatsApp</a>
-      <a href="https://www.instagram.com/pilotothales" target="_blank" class="large-link">Instagram</a>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5515988069095" target="_blank" class="footer-link" aria-label="Enviar mensagem no WhatsApp">
+        <img src="logos/w.png" alt="WhatsApp" class="icon-social">
+        <span class="link-text">WhatsApp</span>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/pilotothales" target="_blank" class="footer-link" aria-label="Abrir Instagram">
+        <img src="logos/i.png" alt="Instagram" class="icon-social">
+        <span class="link-text">Instagram</span>
+      </a>
     </div>
   </div>
 </footer>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>

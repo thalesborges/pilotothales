@@ -60,7 +60,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 40px;
 }
 
@@ -523,7 +523,7 @@ body, html {
 }
 /* 1) Regra geral para todas as imagens da página (segurança) */
 img {
-  max-width: 100%; /* nunca ultrapassa o container */
+  max-width: 150%; /* nunca ultrapassa o container */
   height: auto;    /* mantém proporção */
   display: block;
 }
@@ -541,7 +541,7 @@ img {
 .photo-gallery img,
 figure img {
   width: 100%;         /* ocupa o espaço da coluna */
-  max-height: 320px;   /* controla altura máxima para não ficar gigante */
+  max-height: 420px;   /* controla altura máxima para não ficar gigante */
   object-fit: cover;   /* corta bordas mantendo centralidade */
   border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -565,13 +565,16 @@ figure figcaption {
 }
 
 .logo-gallery .logo-item {
-  width: 100%;
-  max-width: 40px;  /* controla o tamanho máximo do logo */
-  height: 60px;      /* altura uniforme */
+  width: 360%;
+  max-width: 150px;  /* controla o tamanho máximo do logo */
+  height: auto;     /* altura uniforme */
   object-fit: contain; /* preserva proporção do logo */
-  display: block;
+  display: inline-block;
   filter: none;       /* por padrão colorido; use grayscale(1) se preferir */
   transition: transform .14s ease;
+  margin: 8px;
+  object-fit: contain; /* preserva proporção dentro da caixa */
+  vertical-align: middle;
 }
 .logo-gallery a:hover .logo-item,
 .logo-gallery .logo-item:hover {
@@ -601,4 +604,172 @@ figure figcaption {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ícone WhatsApp no footer / menu */
+.whatsapp-link {
+ position: relative;
+  top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.icon-whatsapp {
+  width: 36px;    /* ajuste para 32/40/48 conforme preferir */
+  height: 36px;
+  display: block;
+}
+
+.icon-instagram {
+  width: 30px;    /* ajuste para 32/40/48 conforme preferir */
+  height: 35px;
+  display: inline-flex;
+}
+/* se quiser manter o texto ao lado (opcional) */
+.large-link instagram-link {
+  gap: 8px;
+  padding: 6px 10px;
+}
+large-link instagram-link .label {
+  font-weight: 200;
+  color: var(--text);
+}
+
+
+/* se quiser manter o texto ao lado (opcional) */
+.whatsapp-link.with-text {
+  gap: 8px;
+  padding: 6px 10px;
+}
+.whatsapp-link.with-text .label {
+  font-weight: 300;
+  color: var(--text);
+}
+
+/* Footer — ícones sociais uniformes */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 270px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* estilo comum para cada link do footer */
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+/* ícone (WhatsApp / Instagram) — mesmo tamanho para ambos */
+.icon-social {
+  width: 34px;
+  height: 34px;
+  display: block;
+  object-fit: contain;
+}
+
+/* texto ao lado do ícone — se quiser esconder em mobile, veja nota abaixo */
+.link-text {
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+/* hover igual para ambos */
+.footer-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(2,6,12,0.35);
+  background: rgba(255,255,255,0.02);
+}
+
+/* se quiser o ícone colorido diferente no hover (opcional) */
+/* .footer-link:hover .icon-social { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); } */
+
+/* comportamento em telas pequenas */
+@media (max-width: 720px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  .footer-links {
+    gap: 10px;
+  }
+  /* opcional: ocultar o texto deixando só o ícone no mobile */
+  /* .link-text { display: none; } */
+}
+
+/* ----- Top socials (menu) ----- */
+.top-socials {
+  position: fixed;             /* mantém no topo junto com o menu */
+  top: 14px;                   /* mesmo top da .nav-menu */
+  right: 110px;                /* afasta das opções do menu — ajuste conforme precisar */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+.top-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  text-decoration: none;
+}
+
+.top-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  object-fit: contain;
+}
+
+/* hover idêntico ao footer */
+.top-social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(2,6,12,0.45);
+  background: rgba(255,255,255,0.03);
+}
+
+/* pequena quebra para telas menores — esconde texto e reduz tamanho */
+@media (max-width: 720px) {
+  .top-socials {
+    right: 12px;   /* alinhado com o menu móvel */
+    top: 10px;
+    gap: 8px;
+  }
+  .top-icon { width: 24px; height: 24px; }
+}
+
+/* classe de acessibilidade (visível só para screen readers) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
 }
