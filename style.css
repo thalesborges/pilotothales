@@ -94,8 +94,9 @@ section {
 .action-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 100px;
+  margin-top: 70px;
+ margin-bottom: 150px;
 }
 
 .button {
@@ -362,11 +363,25 @@ body, html {
   .nav-menu a { padding:6px 8px; font-size:0.95rem; }
   .service-card, .why-card, .feedback-box { width: calc(100% - 28px); }
 }
-/* estilos mínimos para as logos (colar no final de style.css) */
 .logo-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:18px; align-items:center; justify-items:center; padding:6px; }
-.logo-item { max-width:140px; max-height:90px; width:100%; height:90px; object-fit:contain; background:transparent; padding:8px; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+.logo-item { max-width:140px; max-height:90px; width:100%; height:90px; object-fit:contain; background:transparent; padding:8px; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); 
+}
+
+
+.section-texta {
+margin-top: 250px;
+  margin-bottom: 1px;
+}
+
+
+
 .section-text {
-  margin-bottom: 30px; /* espaço entre texto e vídeo/foto */
+  margin-bottom: 1px;
+}
+
+.section-texti {
+  margin-top: -80px;
+  margin-bottom: 300px;
 }
 
 .main-image-placeholder {
@@ -379,7 +394,6 @@ body, html {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
-  margin: 30px 0; /* ajusta espaço entre texto e vídeo */
 }
 .video-wrapper iframe{
   position: absolute;
@@ -388,10 +402,12 @@ body, html {
   width: 100%;
   height: 100%;
   border: 0;
+ margin-top: -273px;
 }
 .author-figure {
-  margin: 40px 0; /* espaço entre foto e os outros elementos */
+  margin: 40px 0;
   text-align: center;
+ margin-top: -373px
 }
 .author-figure img{
   max-width: 100%;
@@ -405,12 +421,12 @@ body, html {
   font-size: .95rem;
   color: #666;
 }
-/* vídeo responsivo */
+
 .video-wrapper{
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
-  margin: 30px 0; /* espaço acima/abaixo do vídeo */
+  margin: 30px 0; 
 }
 .video-wrapper iframe{
   position: absolute;
@@ -421,15 +437,15 @@ body, html {
   border: 0;
 }
 
-/* fallback para quando JS estiver desligado (estética) */
+
 .video-fallback { text-align:center; margin:30px 0; }
 .video-fallback img { max-width:100%; height:auto; display:block; margin:0 auto; cursor:pointer; border-radius:6px; }
 .video-fallback figcaption { margin-top:8px; color:#666; font-size:.95rem; }
 
-/* figura do autor (a imagem da logo) */
 .author-figure {
   margin: 40px 0;
   text-align: center;
+ margin-top: -130px;
 }
 .author-figure img{
   max-width: 100%;
@@ -439,20 +455,20 @@ body, html {
   border-radius: 6px;
 }
 .author-figure figcaption{
-  margin-top: 8px;
+  margin-top: 15px;
   font-size: .95rem;
   color: #666;
 }
-/* cria espaçamento entre cada card */
+
 .services-section .service-card + .service-card {
   margin-top: 30px;
 }
 
-/* garante espaço após o texto do card */
+
 .services-section .service-card p {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
-/* ---- galeria em grid ---- */
+
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -587,7 +603,6 @@ figure figcaption {
   figure img { max-height: 220px; }
   .logo-gallery .logo-item { height: 48px; max-width: 110px; }
 }
-/* estilos aplicados apenas à página palestras */
 .page-palestras .video-wrapper {
   max-width: 560px;        /* largura máxima do player nesta página */
   margin: 24px auto;       /* centraliza e cria espaço */
